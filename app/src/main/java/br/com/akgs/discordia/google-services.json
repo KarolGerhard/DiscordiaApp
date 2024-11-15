@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "356254448570",
+    "project_id": "discordia-cbdb9",
+    "storage_bucket": "discordia-cbdb9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356254448570:android:b1a000e0c3ce2a1587bb83",
+        "android_client_info": {
+          "package_name": "br.com.akgs.discordia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoZjz12AAxGAZZYyNbhsNESnt9jqcWpzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
