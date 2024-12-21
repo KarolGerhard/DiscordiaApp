@@ -4,15 +4,16 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.akgs.sharedtrip.databinding.ActivityLoginBinding
+import br.com.akgs.discordia.databinding.ActivityLoginBinding
+import br.com.akgs.discordia.ui.MainActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private val auth = FirebaseAuth.getInstance()
-
+    private val viewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +30,14 @@ class LoginActivity : AppCompatActivity() {
                 val snackbar = Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_SHORT)
                 snackbar.setBackgroundTint(Color.RED)
                 snackbar.show()
-            }else{
-                auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener { autenticacao ->
-                    if(autenticacao.isSuccessful){
-                        goToHome()
+            }else {
+                val autenticacao = viewModel.login(email = email, password = senha)
+                if (autenticacao == "Success") {
+                    goToHome()
 
-                    }
-                }.addOnCompleteListener {
-                    val snackbar = Snackbar.make(view, "Erro ao fazer o login", Snackbar.LENGTH_SHORT)
+                } else {
+                    val snackbar =
+                        Snackbar.make(view, "Erro ao fazer o login", Snackbar.LENGTH_SHORT)
                     snackbar.setBackgroundTint(Color.RED)
                     snackbar.show()
                 }
@@ -44,9 +45,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.txtIrCadastro.setOnClickListener {
-            val intent = Intent(this, CadastroActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-
         }
     }
 

@@ -1,13 +1,14 @@
 package br.com.akgs.discordia.data.auth
 
+import br.com.akgs.discordia.data.remote.entities.Usuario
 import br.com.akgs.discordia.data.remote.firebase.FirebaseAuthenticator
 
 class AuthRepositoryImpl(
     private val auth: FirebaseAuthenticator
 ): AuthRepository {
+
     override fun login(email: String, password: String) {
         auth.signIn(email, password)
-
     }
 
     override fun register(email: String, password: String){
@@ -18,9 +19,7 @@ class AuthRepositoryImpl(
         auth.signOut()
     }
 
-    override fun currentUser(): String {
-        return auth.currentUser()
+    override fun currentUser(): Usuario {
+       return auth.currentUser()
     }
-
-
 }

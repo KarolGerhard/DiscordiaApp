@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".controller.MainActivity">
+    tools:context=".ui.MainActivity">
 
 
     <fragment
@@ -22,6 +22,9 @@
         style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/md_theme_light_onPrimary"
+        app:itemIconTint="@color/md_theme_light_onSecondary"
+        app:itemTextColor="@color/md_theme_light_onSecondary"
         app:menu="@menu/bottom_navigation_menu" />
 
 </LinearLayout>

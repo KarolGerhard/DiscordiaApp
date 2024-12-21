@@ -2,11 +2,11 @@ package br.com.akgs.discordia.data.di
 
 import br.com.akgs.discordia.data.auth.AuthRepository
 import br.com.akgs.discordia.data.auth.AuthRepositoryImpl
+import br.com.akgs.discordia.data.remote.firebase.FirebaseAuthImpl
+import br.com.akgs.discordia.data.remote.firebase.FirebaseAuthenticator
 import org.koin.dsl.module
-import javax.annotation.processing.Generated
 
-@Generated
 val authenticatorModule = module {
-    single { get<AuthRepositoryImpl>() }
-    single { get<AuthRepository>() }
+    single<FirebaseAuthenticator> { FirebaseAuthImpl() }
+    single<AuthRepository> { AuthRepositoryImpl(get()) }
 }

@@ -1,11 +1,11 @@
-package com.akgs.sharedtrip.model
+package br.com.akgs.discordia.domain.entities
 
 class Expense
     (
     var id: String,
+    var userId: String? = "",
     var itemName: String? = "",
     var value: Double? = 0.0,
-    var formaPagamento: String? = "",
-    var pessoaPagante: String? = ""
-) {
-}
+    var paymentMethod: String? = "",
+    var peoplePaid: String? = ""
+)

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="md_theme_light_primary">#FFFAEF</color>
+    <color name="md_theme_light_onPrimary">#E8F1F2</color>
+    <color name="md_theme_light_text">#13293D</color>
+    <color name="md_theme_light_secondary">#1b98e0</color>
+    <color name="md_theme_light_onSecondary">#006494</color>
+
 </resources>

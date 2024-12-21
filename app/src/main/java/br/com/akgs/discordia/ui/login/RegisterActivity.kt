@@ -4,8 +4,8 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.akgs.sharedtrip.databinding.ActivityCadastroBinding
 import br.com.akgs.discordia.data.remote.entities.Usuario
+import br.com.akgs.discordia.databinding.ActivityCadastroBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlin.Result.Companion.success
 
-class CadastroActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastroBinding
     private val auth = FirebaseAuth.getInstance()

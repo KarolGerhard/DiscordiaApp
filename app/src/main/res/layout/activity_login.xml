@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="@string/titulo_login"
             android:textSize="28dp"
-            android:textColor="@color/md_theme_light_onPrimaryContainer"
+            android:textColor="@color/md_theme_light_text"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"/>
@@ -29,7 +29,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_email"
-            android:background="@color/md_theme_light_onPrimary"
             android:padding="15dp"
             android:maxLines="1"
             android:inputType="textEmailAddress"
@@ -42,7 +41,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_senha"
-            android:background="@color/md_theme_light_onPrimary"
             android:padding="15dp"
             android:maxLines="1"
             android:inputType="numberPassword"
@@ -60,7 +58,7 @@
             android:textStyle="bold"
             android:textAllCaps="false"
             android:padding="15dp"
-            android:backgroundTint="@color/md_theme_light_primary"
+            android:backgroundTint="@color/md_theme_light_secondary"
             android:layout_margin="20dp"/>
 
         <TextView
@@ -68,8 +66,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/texto_tela_cadastro"
-            android:textSize="16dp"
-            android:textColor="@color/md_theme_light_onPrimaryContainer"
+            android:textSize="16sp"
+            android:textColor="@color/md_theme_light_onSecondary"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"/>

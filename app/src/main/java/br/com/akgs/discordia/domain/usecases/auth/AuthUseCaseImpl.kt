@@ -1,22 +1,22 @@
 package br.com.akgs.discordia.domain.usecases.auth
 
-import br.com.akgs.discordia.data.auth.AuthRepository
+import br.com.akgs.discordia.data.remote.entities.Usuario
+import br.com.akgs.discordia.data.remote.firebase.FirebaseAuthenticator
 
-class AuthUseCaseImpl(private val authRepository: AuthRepository) : AuthUseCase {
+class AuthUseCaseImpl(private val authRepository: FirebaseAuthenticator) : AuthUseCase {
     override fun login(email: String, password: String) {
-        authRepository.login(email, password)
+        authRepository.signIn(email, password)
     }
 
-    override fun register(email: String, password: String) {
-        authRepository.register(email, password)
+    override suspend fun register(email: String, password: String) {
+        authRepository.createUser(email, password)
     }
 
     override fun logout() {
-        authRepository.logout()
+        authRepository.signOut()
     }
 
-    override fun currentUser() {
-        authRepository.currentUser()
+    override fun currentUser(): Usuario {
+        return authRepository.currentUser()
     }
-
 }

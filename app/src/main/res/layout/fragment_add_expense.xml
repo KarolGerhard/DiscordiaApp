@@ -7,11 +7,11 @@
     android:fillViewport="true">
 
     <LinearLayout
-        android:id="@+id/adicionaDespesasFragment"
+        android:id="@+id/addExpenseFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".controller.AdicionaDespesasFragment">
+        tools:context=".ui.AddExpenseFragment">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_margin="20dp"
             android:gravity="left"
             android:text="Adicione uma despesa"
-            android:textColor="@color/md_theme_dark_inverseOnSurface"
+            android:textColor="@color/md_theme_light_text"
             android:textSize="28dp"
             android:textStyle="bold" />
 
@@ -34,8 +34,7 @@
             android:hint="@string/hint_nome_item"
             android:inputType="textCapWords"
             android:maxLines="1"
-            android:padding="15dp"
-            android:textColorLink="@color/md_theme_dark_inversePrimary" />
+            android:padding="15dp" />
 
         <EditText
             android:id="@+id/edt_valor"
@@ -45,7 +44,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:hint="@string/hint_valor"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|number"
             android:maxLines="1"
             android:padding="15dp" />
 
@@ -60,7 +59,6 @@
             android:inputType="textCapWords"
             android:maxLines="1"
             android:padding="15dp" />
-
 
         <EditText
             android:id="@+id/edt_pessoa_pagante"
@@ -79,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:backgroundTint="@color/md_theme_light_primary"
+            android:backgroundTint="@color/md_theme_light_secondary"
             android:padding="15dp"
             android:text="@string/texto_botao_adicionar"
             android:textAllCaps="false"

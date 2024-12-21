@@ -1,13 +1,10 @@
 package br.com.akgs.discordia.data.remote.firebase
+import br.com.akgs.discordia.data.remote.entities.Usuario
 import com.google.firebase.auth.FirebaseAuth
 
 
 class FirebaseAuthImpl: FirebaseAuthenticator {
-    private lateinit var auth: FirebaseAuth
-
-    override fun getInstance(){
-       auth = FirebaseAuth.getInstance()
-    }
+    private var auth = FirebaseAuth.getInstance()
 
     override fun createUser(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
@@ -34,8 +31,12 @@ class FirebaseAuthImpl: FirebaseAuthenticator {
         auth.signOut()
     }
 
-    override fun currentUser(): String {
-        val authenticatedUser = auth.currentUser
-        return authenticatedUser?.email ?: ""
+    override fun currentUser(): Usuario {
+        val user = auth.currentUser
+        return if (user != null) {
+            Usuario(id = user.uid, email = user.email, nome = user.displayName, )
+        }else{
+            Usuario("","","")
+        }
     }
 }

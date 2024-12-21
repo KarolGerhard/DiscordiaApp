@@ -4,14 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.PerfilFragment">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
-
+    android:orientation="vertical"
+    android:id="@+id/profileFragment"
+    tools:context=".ui.profile.ProfileFragment">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,6 +14,7 @@
             android:layout_margin="20dp"
             android:gravity="left"
             android:text="Suas informações"
+            android:textColor="@color/md_theme_light_text"
             android:textSize="28dp"
             android:textStyle="bold" />
 
@@ -30,6 +26,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:text="Nome"
+            android:textColor="@color/md_theme_light_onSecondary"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -52,6 +49,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:text="Email"
+            android:textColor="@color/md_theme_light_onSecondary"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -76,7 +74,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/md_theme_light_primary"
+            android:backgroundTint="@color/md_theme_light_secondary"
             android:padding="15dp"
             android:text="Sair"
             android:textAllCaps="false"
@@ -87,7 +85,6 @@
         </Button>
 
 
-    </LinearLayout>
 </LinearLayout>
 
 
